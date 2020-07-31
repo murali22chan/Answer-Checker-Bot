@@ -6,7 +6,7 @@ Users can enter question and respective answers and save it to database. Then us
 Its requires MySQL Server for database operations. Download and install MySQL Server.
 1. Git Clone the Repo
 ```python
-git clone
+git clone https://github.com/murali22chan/Answer-Checker-Bot.git
 ```
 2. Install the required packages. (pip3 for python 3.X.X >)
 ```python 
