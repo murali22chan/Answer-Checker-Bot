@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>BOT</title>
+<link rel="icon" href="https://img.icons8.com/nolan/64/bot.png">
+{% endblock %}
+
+{% block body %}
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Answer Checker Bot</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <!-----------  NAV BAR ROUTING ----------->
+        <a class="nav-link" href={{ url_for("index") }}>Check Answer <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={{ url_for("add") }}>Add Question</a>
+      </li>
+      <!-------------------------------------------->
+    </ul>
+  </div>
+</nav>
+<h1>Select a Question</h1>
+<div class="question">
+  <!------- FORM TO GET THE SELECTED QUESTION AND ENTERED ANSWER------------>
+  <form action="/score" method="POST">
+  <select class="form-control" name="questionNum" id="questionNum">
+    {% for x in questions %}
+  <option value={{ loop.index }}>Question Number {{ loop.index }}</option>
+  {% endfor %}
+</select>
+<h1>Enter the Answer</h1>
+  <textarea class="form-control" id="exampleFormControlTextarea1" name="answer" rows="3" style="padding-bottom: 10px;"></textarea>
+
+
+  <input class="btn btn-primary" type="submit" value="Check Answer" style="grid-row-gap: 10px;">
+</form>
+</div>
+<!------------------------------------------------------------------------------>
+<!-------DISPLAY SCORE-------------------->
+<div class="alert alert-primary" role="alert">
+ The Answer Score is {{ score }}
+</div>
+ <!--------------------------------------->
+{% endblock %}
