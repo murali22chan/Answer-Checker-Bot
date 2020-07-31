@@ -13,7 +13,7 @@ git clone https://github.com/murali22chan/Answer-Checker-Bot.git
 pip install -r requirements.txt 
 ```
 3. Enter your MySQL server username and passowrd in create_database.py , create_table.py, and app.py scripts. <br>
-4. Run the create_database.py then create_table.py to create the database and repesctive tables. <br>
+4. Run the create_database.py then create_table.py to create the database and respective tables. <br>
 5. Run the app.py
 ## Note
 As gensim module take time to load, the flask server will load slowly and prediction will happen fast because flask application parameter threaded is set to TRUE.
